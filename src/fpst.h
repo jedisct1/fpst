@@ -47,13 +47,12 @@ int fpst_has_key_str(FPST *trie, const char *key, uint64_t *found_val_p);
 
 /**
  * Inserts a key `key` of length `len` (not including the leading `\0`)
- * into the trie. `val` is a 63-bit value: the highest bit must not be set.
+ * into the trie.
  */
 FPST * fpst_insert(FPST *trie, const char *key, size_t len, uint64_t val);
 
 /**
  * Inserts a zero-terminated key `key` into the trie.
- * `val` is a 63-bit value: the highest bit must not be set.
  */
 FPST * fpst_insert_str(FPST *trie, const char *key, uint64_t val);
 
