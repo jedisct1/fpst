@@ -286,7 +286,9 @@ fpst_free_node(FPST *t, FPST_FreeFn free_kv_fn)
     free(t->children);
     t->bitmap = 0U;
     t->children = NULL;
-    free_kv_fn(t->key, t->val);
+    if (free_kv_fn != NULL) {
+        free_kv_fn(t->key, t->val);
+    }
     t->key = NULL;
 }
 
